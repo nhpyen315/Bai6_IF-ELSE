@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Tính điểm Đại học khối D</h1>
+    Môn Toán <input id="Toan" type="text"></input><br>
+    Môn Văn <input id="Van" type="text"></input><br>
+    Môn Anh <input id="Anh" type="text"></input><br>
+    Khu vực <select id="kv">
+            <option id="kv1">KV1</option>
+            <option id="kv2">KV2</option>
+            <option id="kv2nt">KV2-NT</option>
+            <option id="kv3">KV3</option>
+    </select>
+    <button onlick="Tinhtoan()">Tính điểm</button>
+    <p id="result">Tổng điểm là:
+    </p>
+</body>
+<script>
+    function Tinhtoan(){
+        let diemToan=parseFloat(document.getElementById("Toan").value)
+        let diemVan=parseFloat(document.getElementById("Van").value)
+        let diemAnh=parseFloat(document.getElementById("Anh").value)
+        let diemKV=parseFloat(document.getElementById("kv").value)
+        let result=diemToan+diemVan+diemAnh+diemKV
+        document.write("Tổng điểm là:" + result)
+        //Chưa xong do chưa viết đc lệnh swtich-case
+    }
+</script>
+</html>
