@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=>, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="#">
+        Amount <input type="text" id="amount"></input> 
+        <br>From Currency <select id="fromCur">
+            <option value="USD">USD</option>
+            <option value="VND">VND</option>
+        </select>
+        <br>To Currency <select id = "toCur">
+        <option value="USD">USD</option>
+        <option value="VND">VND</option>
+         </select><br>
+        <button onclick="convert()">Convert</button>
+    </form>
+    <p id="result">Số tiền là:</p>
+
+</body>
+<script>
+    function convert(){
+        let amount=parseFloat(document.getElementById("amount").value)
+        let fromCur=document.getElementById("fromCur").value
+        let toCur=document.getElementById("toCur").value
+        let change
+        let result=document.getElementById("result")
+        if (fromCur == "USD" && toCur=="VND") 
+            change = amount*23000
+        else if (fromCur=="USD" && toCur=="USD")
+            change = amount
+        
+        if (fromCur == "VND" && toCur=="USD") 
+            change = amount/23000
+        else if (fromCur=="VND" && toCur=="VND")
+            change = amount
+        document.getElementById("result").innerHTML=("Số tiền là: " + change)
+    }
+
+</script>
+</html>
